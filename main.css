@@ -1,0 +1,32 @@
+.container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.canvasjs-chart-credit{
+    display: none;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+.graphs{
+    width: 100%;
+    min-height: 450px;
+    margin-top: 100px;
+}
+
+#firstChart {
+    width: 800px;
+    height: 400px;
+}
+
+#secondChart {
+    width: 800px;
+}
+
+button {
+    background-color: white;
+    color:black;
+}
