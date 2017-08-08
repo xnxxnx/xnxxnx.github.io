@@ -1,0 +1,12 @@
+.container{
+    width: 100%;
+}
+
+.title{
+    width: 100%;
+}
+
+h1{
+    width: 300px;
+    margin: 30px auto 10px;
+}
