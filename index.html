@@ -1,24 +1,109 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Sample</title>
-        <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-        <link rel="stylesheet" href="./index.css"></link>
-        <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
-        <script src="./index.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="title">
-                <h1>Time Line Sample</h1>
-            </div>
-            <div id ='timeline-embed' style="width: 100%; height: 600px"></div>
-        </div>
-        <script type="text/javascript">
-            var data = getData();
-            window.timeline = new TL.Timeline('timeline-embed',
-                data);
-        </script>
-    </body>
+
+<head>
+    <meta charset='utf-8' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css' rel='stylesheet' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css' rel='stylesheet' media='print'
+    />
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js'></script>
+    <!--<script src='./index.js'></script>-->
+    <script>
+        $(document).ready(function () {
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                defaultDate: '2017-08-09',
+                navLinks: true, // can click day/week names to navigate views
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: '2017-08-10'
+                    }
+                    ,
+                    {
+                        title: 'Long Event',
+                        start: '2017-08-12',
+                        end: '2017-07-10'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2017-08-09T16:00:00'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2017-08-16T16:00:00'
+                    },
+                    {
+                        title: 'Conference',
+                        start: '2017-08-11',
+                        end: '2017-08-13'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2017-08-12T10:30:00',
+                        end: '2017-08-12T12:30:00'
+                    },
+                    {
+                        title: 'Lunch',
+                        start: '2017-08-12T12:00:00'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2017-08-12T14:30:00'
+                    },
+                    {
+                        title: 'Happy Hour',
+                        start: '2017-08-12T17:30:00'
+                    },
+                    {
+                        title: 'Dinner',
+                        start: '2017-08-12T20:00:00'
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: '2017-08-13T07:00:00'
+                    },
+                    {
+                        title: 'Click for Google',
+                        url: 'http://google.com/',
+                        start: '2017-08-28'
+                    }
+                ]
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            margin: 40px 10px;
+            padding: 0;
+            font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+            font-size: 14px;
+        }
+
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='calendar'></div>
+
+</body>
+
 </html>
